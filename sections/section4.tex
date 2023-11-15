@@ -1,0 +1,106 @@
+\section{Labels and Dynamic Frames}
+
+\subsection{Labels and buttons}
+
+\begin{frame}
+    \label{FrameToGo}
+    \frametitle{This is the labelled frame}
+    This is a random frame with a label.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Frame with the reference to the labelled one}
+    Hyperlinks in different styles:\\
+    \centering
+    \hyperlink{FrameToGo}{Hyperlink without button}\\
+    \hyperlink{FrameToGo}{\beamerbutton{General style button}}\\
+    \hyperlink{FrameToGo}{\beamergotobutton{Go to style button}}\\
+    \hyperlink{FrameToGo}{\beamerskipbutton{Skip style button}}\\
+    \hyperlink{FrameToGo}{\beamerreturnbutton{Return style button}}
+\end{frame}
+
+\subsection{Learning to use Pause}
+
+\begin{frame}
+    \frametitle{Frame with a Paused list}
+    The command pause can be use to split a frame in different slides and show some portions at a time.
+    \begin{itemize}
+        \pause
+        \item This will appear on the second slide of the frame.
+        \pause
+        \item Then this on the third.
+    \end{itemize}
+    As you can see in the navigation bar, the number of the frame does not change!
+\end{frame}
+
+\subsection{Learning Overlays}
+
+\begin{frame}
+    \frametitle{Standard Overlays}
+    Overlays are a bit better then pause, in the sense that make you able to do more complicated stuff like the following:\\
+    \onslide<-2>{This text is from the beginning to the second slide.}\\
+    \onslide<2->{This text is from the second slide on.}\\
+    \onslide<4->{This text is from the fourth slide on.}\\
+    \onslide<3>{This text is only on the third slide.}\\
+    As you will see in the next slides, the three main features are that you can decided the number of slide of a part of the frame,  you can show later in the slides part of the frame that are at the top or center, and you can make disappear part of the body going further in the slides.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Overlays with lists}
+    Overlays also works with lists.
+    Here an example.
+    \begin{enumerate}[(I)]
+        \item<1-> Point A
+        \item<2-> Point B
+        \begin{itemize}
+            \item<3-> part 1
+            \item<4-> part 2
+        \end{itemize}
+        \item<2,4,6-> Appears on slide 2, 4, $\geq$6.
+        \item<5-> Point D
+    \end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Other Overlays effects}
+    \textbf<2>{Example Text}
+    \textit<2>{Example Text}
+    \textsl<2>{Example Text}
+    \textrm<2>{Example Text}
+    \textsf<2>{Example Text}
+    \textcolor<2>{orange}{Example Text}
+    \alert<2>{Example Text}
+    \structure<2>{Example Text}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Maths Blocks}
+    \begin{theorem}<1->[Pythagoras] 
+        $ a^2 + b^2 = c^2$
+    \end{theorem}
+    \begin{corollary}<3->
+        $ x + y = y + x  $
+    \end{corollary}
+    \begin{proof}<2->
+        $\omega +\phi = \epsilon $
+    \end{proof}
+\end{frame}
+
+
+\setbeamercovered{transparent} %If you want the covered text to be transparent instead of invisibile!
+\begin{frame}
+\frametitle{Tables}
+\begin{table}
+\begin{tabular}{l | c | c | c | c }
+Competitor Name & Swim & Cycle & Run & Total \\
+\hline \hline
+John T & 13:04 & 24:15 & 18:34 & 55:53 \onslide<2-> \\ 
+Norman P & 8:00 & 22:45 & 23:02 & 53:47 \onslide<3->\\
+Alex K & 14:00 & 28:00 & n/a & n/a \onslide<4->\\
+Sarah H & 9:22 & 21:10 & 24:03 & 54:35 
+\end{tabular}
+\caption{Triathlon results}
+\end{table}
+\end{frame}

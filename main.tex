@@ -1,296 +1,63 @@
+% DOCUMENT CLASS & TEMPLATE LOADING.
 \documentclass{beamer} % DocumentClass = Presentation.
-\usetheme{Boadilla} % Theme of the presentation.
-%\usecolortheme{dolphin} % Theme color palette.
-%\useinnertheme{metropolis} % Style of inner elements.
-%\useoutertheme{miniframes} % Style of outer elements.
-%\usefonttheme{serif} % Some font styles.
-% All combinations of themes and colors at
-% https://hartwork.org/beamer-theme-matrix/
-
-% FONTS OF THE DOCUMENT.
-\usepackage{fontspec}
-% Font corpo = Roboto Condensed. 
-% Font titolo = Rotis Semi Serif.
+\input{settings/settings} % Settings of the Template.
 
 
-% Presentation Details.
-\title{SNS Beamer Template}
+% PRESENTATION DETAILS.
+\title{SNS Beamer Presentation Template}
 \author{Andrea Canzio}
-\institute[]{\includegraphics[width=5cm]{images/logo_SNS_blue.png}}
-\logo{\includegraphics[width=3cm]{images/logo_SNS_blue.png}\vspace{193pt}}
+\institute[]{\includegraphics[width=5.5cm]{settings/logo_SNS_blue.png}}
+\logo{\includegraphics[width=2cm]{settings/logo_SNS_blue.png}\vspace{215pt}}
 \date{\today}
 
-% Packages.
+
+% PACKAGES.
 \usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+    %\definecolors{Heavenly}{HTML}{#9CD7F3}
+\usepackage{listings}
+    \lstset{language=Python} % Default languange for codes.
+\usepackage{mdframed}
 
 
-% Begin of the document.
+% BEGIN OF THE DOCUMENT.
 \begin{document}
 
+
+% FONT OF THE BODY OF THE DOCUMENT.
+%\fontspec{RobotoCondensed} % SNS Font (not very nice)
+\fontspec[Scale=1.0]{Times New Roman}
+\justify
+
+
+% TITLE FRAME
 \begingroup
-\logo{}
-\begin{frame}
-    \titlepage
-\end{frame}
+    \fontspec[Scale=1.5]{RotisSemiSerifPro}
+    \logo{}
+    \begin{frame}
+        \titlepage
+    \end{frame}
 \endgroup
 
-% Recurrent Frame.
+
+% FRAMES BEFORE THE TABLE OF CONTENTS.
+\include{sections/section0}
+
+
+% RECURRENT TABLE OF CONTENTS.
 \AtBeginSection[]{
     \begin{frame}{Outline}
-        \tableofcontents[currentsection, hideallsubsections]
+        \tableofcontents[currentsection]
     \end{frame}
 }
 
-\section{Introduction}
-\subsection{The very beginning}
 
-\begin{frame}{First Frame Title}
-    blablabla...
-\end{frame}
-
-\begin{frame}
-    \frametitle{Another way to set the title}
-    blabla again.
-\end{frame}
-
-\section{Second one}
-
-\begin{frame}{Yet another frame}
-    Something interesting.
-\end{frame}
-
-\begin{frame}
-    \frametitle{List}
-    \begin{itemize}
-        \item Point A
-        \item Point B
-        \begin{itemize}
-            \item part 1
-            \item part 2
-        \end{itemize}
-        \item Point C
-        \item Point D
-    \end{itemize}
-    \begin{enumerate}[I]
-        \item Point A
-        \item Point B
-        \begin{enumerate}[i]
-            \item part 1
-            \item part 2
-        \end{enumerate}
-        \item Point C
-        \item Point D
-    \end{enumerate}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Using Columns}
-    \begin{columns}
-        \column{0.5\textwidth}
-            some text
-        \column{0.5\textwidth}
-            some other text
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Pictures}
-    \begin{figure}
-        \includegraphics[scale=0.03]{images/image_placeholder.png}
-        \caption{Picture of a Lama}
-    \end{figure}
-    some text.
-\end{frame}
-
-\begin{frame}
-    \frametitle{Pictures part 2}
-    \begin{columns}
-        \column{0.5\textwidth}
-            \begin{figure}
-                \includegraphics[scale=0.03]{images/image_placeholder.png}
-                \caption{Picture of a Lama}
-            \end{figure}
-        \column{0.5\textwidth}
-        some text.
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Description, useful for definitions}
-    \begin{description}
-        \item[API] Application Programming Interface
-        \item[LAN] Local Area Network
-        \item[ASCII] American Standard Code for Information Interchange
-    \end{description}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Table}
-    \begin{table}
-        \begin{tabular}{l | c | c | c | c }
-            Competitor Name & Swim & Cycle & Run & Total \\
-            \hline \hline
-            John T & 13:04 & 24:15 & 18:34 & 55:53 \\ 
-            Norman P & 8:00 & 22:45 & 23:02 & 53:47\\
-            Alex K & 14:00 & 28:00 & n/a & n/a\\
-            Sarah H & 9:22 & 21:10 & 24:03 & 54:35 
-        \end{tabular}
-        \caption{Triathlon results}
-    \end{table}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Frame with a Block}
-    \begin{block}{Block Title}
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-        sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua.
-    \end{block}
-    \begin{alertblock}{Block Title}
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-        sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua.
-    \end{alertblock}
-    \begin{example}
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-        sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua.
-    \end{example}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Some other kinds of blocks}
-    \begin{definition}
-        A prime number is a number that...
-    \end{definition}
-    \begin{theorem}[Pythagoras] 
-        $ a^2 + b^2 = c^2$
-    \end{theorem}
-    \begin{corollary}
-        $ x + y = y + x  $
-    \end{corollary}
-    \begin{proof}
-        $\omega +\phi = \epsilon $
-    \end{proof}
-\end{frame}
-
-\begin{frame}[fragile]
-    % The fragile option help with newlines and other special characters
-    % that now are read explicitly. Tabs are also now read explicitly!
-    \frametitle{Bad code example}
-    \begin{semiverbatim}
-\\begin\{frame\}
-    \\frametitle\{Outline\}
-    \\tableofcontents
-        Other text to make you notice the explicit TABS.
-\\end\{frame\}
-    \end{semiverbatim}
-\end{frame}
-
-\begin{frame}
-    \label{FrameToGo}
-    \frametitle{This is the labelled frame}
-    This is a random frame with a label.
-\end{frame}
-
-\begin{frame}
-    \frametitle{Frame with the reference to the labelled one}
-    Hyperlinks in different styles:\\
-    \hyperlink{FrameToGo}{Hyperlink without button}\\
-    \hyperlink{FrameToGo}{\beamerbutton{General style button}}\\
-    \hyperlink{FrameToGo}{\beamergotobutton{Go to style button}}\\
-    \hyperlink{FrameToGo}{\beamerskipbutton{Skip style button}}\\
-    \hyperlink{FrameToGo}{\beamerreturnbutton{Return style button}}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Frame with a Paused list}
-    \begin{itemize}
-        \pause
-        \item I really
-        \pause
-        \item don't like
-        \pause
-        \item to pause a frame.
-        \pause
-        \item You can be better than this.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Overlays}
-    Overlays are a bit better then \\pause, in the sense that make you able to do more complicated stuff like the following:\\
-    \onslide<2->{First Line of Text}\\
-    \onslide<4->{Second Line of Text}\\
-    \onslide<3->{Third Line of Text}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Overlays with lists}
-    Overlays also works with lists.
-    Here we also show some more complicated way of using them.
-    \begin{enumerate}[(I)]
-        \item<1-> Point A
-        \item<2-> Point B
-        \begin{itemize}
-            \item<3-> part 1
-            \item<4-> part 2
-        \end{itemize}
-        \item<2,4,6-> Appears on slide 2, 4, $\geq$6.
-        \item<5-> Point D
-    \end{enumerate}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Overlays}
-    \only<1>{First Line of Text}
-    \only<2>{Second Line of Text}
-    \only<3>{Third Line of Text}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Other Overlays effects}
-    \textbf<2>{Example Text}
-    \textit<2>{Example Text}
-    \textsl<2>{Example Text}
-    \textrm<2>{Example Text}
-    \textsf<2>{Example Text}
-    \textcolor<2>{orange}{Example Text}
-    \alert<2>{Example Text}
-    \structure<2>{Example Text}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Maths Blocks}
-    \begin{theorem}<1->[Pythagoras] 
-        $ a^2 + b^2 = c^2$
-    \end{theorem}
-    \begin{corollary}<3->
-        $ x + y = y + x  $
-    \end{corollary}
-    \begin{proof}<2->
-        $\omega +\phi = \epsilon $
-    \end{proof}
-\end{frame}
-
-
-\setbeamercovered{transparent} %If you want the covered text to be transparent instead of invisibile!
-\begin{frame}
-\frametitle{Tables}
-\begin{table}
-\begin{tabular}{l | c | c | c | c }
-Competitor Name & Swim & Cycle & Run & Total \\
-\hline \hline
-John T & 13:04 & 24:15 & 18:34 & 55:53 \onslide<2-> \\ 
-Norman P & 8:00 & 22:45 & 23:02 & 53:47 \onslide<3->\\
-Alex K & 14:00 & 28:00 & n/a & n/a \onslide<4->\\
-Sarah H & 9:22 & 21:10 & 24:03 & 54:35 
-\end{tabular}
-\caption{Triathlon results}
-\end{table}
-\end{frame}
-
-
+% OTHER SECTIONS.
+\include{sections/section1}
+\include{sections/section2}
+\include{sections/section3}
+\include{sections/section4}
 
 
 \end{document}

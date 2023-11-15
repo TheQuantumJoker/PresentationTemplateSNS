@@ -1,0 +1,59 @@
+\usetheme{Boadilla} % Theme of the presentation.
+%\usecolortheme{dolphin} % Theme color palette.
+%\useinnertheme{metropolis} % Style of inner elements.
+%\useoutertheme{miniframes} % Style of outer elements.
+%\usefonttheme{serif} % Some font styles.
+% All combinations of themes and colors at
+% https://hartwork.org/beamer-theme-matrix/
+
+
+% TITLE PAGE FORMAT
+\setbeamertemplate{title page}{
+  \vbox{}
+  \vfill
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par
+    \end{beamercolorbox}
+    \vskip1em\par
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{beamercolorbox}[sep=8pt,left]{author}
+            \usebeamerfont{author}\insertauthor
+        \end{beamercolorbox}
+        \begin{beamercolorbox}[sep=8pt,left]{date}
+            \usebeamerfont{date}\insertdate
+        \end{beamercolorbox}
+        \column{0.5\textwidth}
+        \begin{beamercolorbox}[sep=8pt,right]{institute}
+            \usebeamerfont{institute}\insertinstitute
+        \end{beamercolorbox}
+    \end{columns}
+  \end{centering}
+  \vfill
+}
+
+
+% LOADING THE OFFICIAL SNS FONTS FROM THE "fonts" FOLDER.
+\usepackage{fontspec}
+\defaultfontfeatures[RobotoCondensed]
+{
+    Path = ./settings/fonts/ ,
+    Extension = .ttf ,
+    UprightFont = RobotoCondensed-Regular ,
+    BoldFont = RobotoCondensed-Bold ,
+    ItalicFont = RobotoCondensed-Italic ,
+    BoldItalicFont = RobotoCondensed-BoldItalic
+}
+\defaultfontfeatures[RotisSemiSerifPro]
+{
+    Path = ./settings/fonts/ ,
+    Extension = .otf ,
+    UprightFont = RotisSemiSerifPro-Regular ,
+    BoldFont = RotisSemiSerifPro-Bold
+}
+
+
+% INCREASING THE SIZE OF THE TEXT IN THE TABLE OF CONTENTS.
+\setbeamerfont{section in toc}{size=\large}
+\setbeamerfont{frametitle}{size=\LARGE}

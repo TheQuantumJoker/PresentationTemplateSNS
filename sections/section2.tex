@@ -1,0 +1,112 @@
+\section{Basic slides}
+
+\subsection{(Un)numbered Lists and Description}
+\begin{frame}
+    \frametitle{(Un)numbered Lists}
+    Unnumbered list. There are many pointer styles to be checked online.
+    \begin{itemize}
+        \item Point A
+        \item Point B
+        \begin{itemize}
+            \item part 1
+            \item part 2
+        \end{itemize}
+        \item Point C
+        \item Point D
+    \end{itemize}
+    Numbered list. There are many enumeration styles to be checked online.
+    \begin{enumerate}[I]
+        \item Point A
+        \item Point B
+        \begin{enumerate}[i]
+            \item part 1
+            \item part 2
+        \end{enumerate}
+        \item Point C
+        \item Point D
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Description}
+    Descriptions are in the middle between a personalized list and a nice way of make some new definitions.
+    \begin{description}
+        \item[API] Application Programming Interface
+        \item[LAN] Local Area Network
+        \item[ASCII] American Standard Code for Information Interchange
+    \end{description}
+\end{frame}
+
+\subsection{Slides with columns}
+\begin{frame}
+    \frametitle{Using Columns}
+    \begin{columns}
+        \column{0.5\textwidth}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fermentum augue nisi. Nullam a metus et odio efficitur varius. Nulla pellentesque lorem in facilisis bibendum. Suspendisse non semper orci. Aliquam posuere massa erat, imperdiet pretium dui elementum facilisis. Nulla dictum tempor neque sit amet efficitur. Praesent vestibulum nibh vitae consectetur ultricies. Etiam tellus orci, sodales eu dapibus ac, volutpat tincidunt est. Sed id lacus sit amet augue luctus dignissim ut eu leo.
+        \column{0.5\textwidth}
+            \justify
+            some other text. As you can see inside columns text is not justified by default, but you can call this option again.
+    \end{columns}
+\end{frame}
+
+\subsection{Pictures}
+\begin{frame}
+    \frametitle{Pictures}
+    \begin{figure}
+        \includegraphics[scale=0.03]{settings/image_placeholder.png}
+        \caption{Picture of a Lama}
+    \end{figure}
+    This is a standard slide with a picture.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Pictures 2}
+    \begin{columns}
+        \column{0.5\textwidth}
+            \begin{figure}
+                \includegraphics[scale=0.03]{settings/image_placeholder.png}
+                \caption{Picture of a Lama}
+            \end{figure}
+        \column{0.5\textwidth}
+        \justify
+        This is another way of setting an image with the use of the columns environment.
+    \end{columns}
+\end{frame}
+
+\subsection{Tables and Blocks}
+
+\begin{frame}
+    \frametitle{Table}
+    This is an example table.
+    \begin{table}
+        \begin{tabular}{l | c | c | c | c }
+            Competitor Name & Swim & Cycle & Run & Total \\
+            \hline \hline
+            John T & 13:04 & 24:15 & 18:34 & 55:53 \\ 
+            Norman P & 8:00 & 22:45 & 23:02 & 53:47\\
+            Alex K & 14:00 & 28:00 & n/a & n/a\\
+            Sarah H & 9:22 & 21:10 & 24:03 & 54:35 
+        \end{tabular}
+        \caption{Triathlon results}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Frame with a Block}
+    This are three different kind of blocks.
+    \begin{block}{Standard block}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+        sed do eiusmod tempor incididunt ut labore et 
+        dolore magna aliqua.
+    \end{block}
+    \begin{alertblock}{An alertblock}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+        sed do eiusmod tempor incididunt ut labore et 
+        dolore magna aliqua.
+    \end{alertblock}
+    \begin{example}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+        sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua.
+    \end{example}
+\end{frame}

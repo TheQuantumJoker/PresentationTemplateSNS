@@ -1,0 +1,45 @@
+\section{Mathematics and Codes}
+
+\subsection{Mathematics}
+
+\begin{frame}
+    \frametitle{Main math environments}
+    \begin{definition}
+        A prime number is a number that...
+    \end{definition}
+    \begin{theorem}[Pythagoras] 
+        $ a^2 + b^2 = c^2$
+    \end{theorem}
+    \begin{corollary}
+        $ x + y = y + x  $
+    \end{corollary}
+    \begin{proof}
+        $\omega +\phi = \epsilon $
+    \end{proof}
+\end{frame}
+
+\subsection{Codes}
+
+\begin{frame}[fragile]
+    % The fragile option help with newlines and other special characters
+    % that now are read explicitly. Tabs are also now read explicitly!
+    \frametitle{Bad code example}
+    \begin{semiverbatim}
+\\begin\{frame\}
+    \\frametitle\{Outline\}
+    \\tableofcontents
+        Other text to make you notice the explicit TABS.
+\\end\{frame\}
+    \end{semiverbatim}
+\end{frame}
+
+\begin{frame}{Nice code example}
+    This is a code
+    \begin{mdframed}[backgroundcolor=yellow!10, rightline=false]
+        \lstinputlisting[
+            language=Python,
+            frame={},
+            caption={Example Python Code}
+            ]{./codes/example.py}
+    \end{mdframed}
+\end{frame}
